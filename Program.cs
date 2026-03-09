@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace PackageExpress
 {
@@ -6,60 +6,114 @@ namespace PackageExpress
     {
         static void Main(string[] args)
         {
+            // ===================== Original PackageExpress Code =====================
             // Display the welcome message for the shipping company
             Console.WriteLine("Welcome to Package Express. Please follow the instructions below.");
 
             // Ask the user to enter the package weight
             Console.WriteLine("Please enter the package weight:");
-
-            // Convert the user input from string to integer
             int weight = Convert.ToInt32(Console.ReadLine());
 
             // Check if the package is too heavy
             if (weight > 50)
             {
-                // Display error message if weight exceeds 50
                 Console.WriteLine("Package too heavy to be shipped via Package Express. Have a good day.");
-
-                // End the program
-                return;
+                return; // End the program
             }
 
-            // Ask the user for the package width
+            // Ask the user for the package width, height, and length
             Console.WriteLine("Please enter the package width:");
             int width = Convert.ToInt32(Console.ReadLine());
 
-            // Ask the user for the package height
             Console.WriteLine("Please enter the package height:");
             int height = Convert.ToInt32(Console.ReadLine());
 
-            // Ask the user for the package length
             Console.WriteLine("Please enter the package length:");
             int length = Convert.ToInt32(Console.ReadLine());
 
             // Check if the total dimensions exceed 50
             if (width + height + length > 50)
             {
-                // Display error message if dimensions are too large
                 Console.WriteLine("Package too big to be shipped via Package Express.");
-
-                // End the program
-                return;
+                return; // End the program
             }
 
-            // Calculate the shipping quote
-            // Multiply width, height, and length together, then multiply by weight
-            // Finally divide by 100 to get the shipping price
+            // Calculate the shipping quote: (width * height * length * weight) / 100
             decimal quote = (width * height * length * weight) / 100m;
-
-            // Display the shipping cost formatted as currency
             Console.WriteLine("Your estimated total for shipping this package is: $" + quote.ToString("F2"));
-
-            // Thank the user
             Console.WriteLine("Thank you!");
-
-            // Pause the console so the user can read the result
             Console.ReadLine();
+            // ==========================================================================
+
+            // ===================== Employee Class Test =====================
+            Console.WriteLine("\n=== Employee Operator Test ===");
+
+            // Instantiate the first Employee object and assign properties
+            Employee employee1 = new Employee
+            {
+                Id = 1,
+                FirstName = "Ahmed",
+                LastName = "Dhel"
+            };
+
+            // Instantiate the second Employee object and assign properties
+            Employee employee2 = new Employee
+            {
+                Id = 2,
+                FirstName = "Ali",
+                LastName = "Hassan"
+            };
+
+            // Compare the two Employee objects using overloaded "==" operator
+            Console.WriteLine($"employee1 == employee2? {employee1 == employee2}");
+
+            // Compare the two Employee objects using overloaded "!=" operator
+            Console.WriteLine($"employee1 != employee2? {employee1 != employee2}");
+
+            Console.WriteLine("Press any key to exit Employee test...");
+            Console.ReadKey();
+            // ==================================================================
+        }
+    }
+
+    // ===================== Employee Class =====================
+    class Employee
+    {
+        public int Id { get; set; }           // Employee's unique identifier
+        public string FirstName { get; set; } // Employee's first name
+        public string LastName { get; set; }  // Employee's last name
+
+        // Overload "==" operator to compare Employee objects by Id
+        public static bool operator ==(Employee e1, Employee e2)
+        {
+            // If both are null, they are equal
+            if (ReferenceEquals(e1, null) && ReferenceEquals(e2, null))
+                return true;
+
+            // If one is null, they are not equal
+            if (ReferenceEquals(e1, null) || ReferenceEquals(e2, null))
+                return false;
+
+            // Compare the Id properties
+            return e1.Id == e2.Id;
+        }
+
+        // Overload "!=" operator (must be paired with "==")
+        public static bool operator !=(Employee e1, Employee e2)
+        {
+            return !(e1 == e2); // Negate the "==" result
+        }
+
+        // Override Equals method to match operator behavior
+        public override bool Equals(object obj)
+        {
+            return this == obj as Employee;
+        }
+
+        // Override GetHashCode method to match Equals
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
         }
     }
 }
