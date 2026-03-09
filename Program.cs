@@ -6,7 +6,6 @@ namespace PackageExpress
     {
         static void Main(string[] args)
         {
-            // ===================== Original PackageExpress Code =====================
             // Display the welcome message for the shipping company
             Console.WriteLine("Welcome to Package Express. Please follow the instructions below.");
 
@@ -117,3 +116,4 @@ namespace PackageExpress
         }
     }
 }
+
