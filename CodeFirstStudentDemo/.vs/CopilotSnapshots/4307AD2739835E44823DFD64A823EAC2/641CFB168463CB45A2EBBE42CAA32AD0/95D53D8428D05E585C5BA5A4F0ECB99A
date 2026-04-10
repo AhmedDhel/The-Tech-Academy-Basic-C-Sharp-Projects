@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+
+namespace CodeFirstStudentDemo
+{
+    public class StudentContext : DbContext, IDisposable
+    {
+        public StudentContext() : base("StudentDBConnection") { }
+
+        public DbSet<Student> Students { get; set; }
+
+        void IDisposable.Dispose()
+        {
+            // Call base class Dispose to release DbContext resources
+            base.Dispose();
+        }
+    }
+}

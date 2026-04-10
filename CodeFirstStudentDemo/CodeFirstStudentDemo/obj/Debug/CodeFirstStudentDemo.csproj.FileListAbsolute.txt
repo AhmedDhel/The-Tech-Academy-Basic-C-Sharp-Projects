@@ -1,0 +1,12 @@
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\obj\Debug\CodeFirstStudentDemo.csproj.AssemblyReference.cache
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\obj\Debug\CodeFirstStudentDemo.csproj.CoreCompileInputs.cache
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\bin\Debug\CodeFirstStudentDemo.exe.config
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\bin\Debug\CodeFirstStudentDemo.exe
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\bin\Debug\CodeFirstStudentDemo.pdb
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\obj\Debug\CodeFirstStudentDemo.exe
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\obj\Debug\CodeFirstStudentDemo.pdb
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\bin\Debug\EntityFramework.dll
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\bin\Debug\EntityFramework.xml
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\qays1\source\repos\CodeFirstStudentDemo\CodeFirstStudentDemo\obj\Debug\CodeFirs.3DADF04C.Up2Date

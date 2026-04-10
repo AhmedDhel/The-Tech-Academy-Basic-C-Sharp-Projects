@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace System.Data.Entity
+{
+    // Minimal in-memory stand-ins for Entity Framework types so the sample compiles
+    public class DbContext : IDisposable
+    {
+        public DbContext() { }
+
+        public DbContext(string nameOrConnectionString)
+        {
+            // In a real app this would configure a database connection. This is a no-op for the demo.
+        }
+
+        public virtual int SaveChanges()
+        {
+            // No-op for the in-memory implementation
+            return 0;
+        }
+
+        public void Dispose()
+        {
+            // Nothing to dispose in the simple implementation
+        }
+    }
+
+    public class DbSet<T> : ICollection<T> where T : class
+    {
+        private readonly List<T> _items = new List<T>();
+
+        public void Add(T item)
+        {
+            _items.Add(item);
+        }
+
+        public IEnumerator<T> GetEnumerator() => _items.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        public void Clear() => _items.Clear();
+        public bool Contains(T item) => _items.Contains(item);
+        public void CopyTo(T[] array, int arrayIndex) => _items.CopyTo(array, arrayIndex);
+        public bool Remove(T item) => _items.Remove(item);
+        public int Count => _items.Count;
+        public bool IsReadOnly => false;
+    }
+}

@@ -1,0 +1,13 @@
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Runtime.Remoting.Contexts;
+
+namespace CodeFirstStudentDemo
+{
+    public class StudentContext : DbContext
+    {
+        public StudentContext() : base("StudentDBConnection") { }
+
+        public DbSet<Student> Students { get; set; }
+    }
+}

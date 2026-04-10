@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+
+namespace CodeFirstStudentDemo
+{
+    public class StudentContext : DbContext, System.IDisposable
+    {
+        public StudentContext() : base("StudentDBConnection") { }
+
+        public DbSet<Student> Students { get; set; }
+
+        internal void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        void System.IDisposable.Dispose()
+        {
+            base.Dispose();
+        }
+    }
+}
